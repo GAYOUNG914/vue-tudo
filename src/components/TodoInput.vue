@@ -20,8 +20,7 @@ export default {
   methods: {
     addTodo: function() {
       if (this.newTodoItem !== "") {
-        var obj = { completed: false, item: this.newTodoItem };
-        localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+        this.$emit("addTodoItem", this.newTodoItem);
         //JSON.stringfy 는 값을 striing type으로 변환시켜주는 api다.
         this.clearInput();
       }
